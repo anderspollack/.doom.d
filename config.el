@@ -5,14 +5,14 @@
 
 ;; Setup initial and default frame sizes
 (setq initial-frame-alist
-      (append (list '(width . 184)
-                    '(height . 62)
+      (append (list '(width . 177)
+                    '(height . 56)
                     '(top . 0)
                     '(left . 0))))
 
 (setq default-frame-alist
-      (append (list '(width  . 80)
-                    '(height . 56)
+      (append (list '(width  . 90)
+                    '(height . 52)
                     '(top . 50)
                     '(left . 30)
                     '(vertical-scroll-bars . nil))))
@@ -32,13 +32,13 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "SF Mono" :size 14 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "Libre Baskerville" :size 16))
+(setq doom-font (font-spec :family "SF Mono" :size 13 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "Libre Baskerville" :size 13))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-solarized-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -80,3 +80,7 @@
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
+
+;; set up deft
+(setq deft-directory "~/org")
+(setq deft-recursive t)
