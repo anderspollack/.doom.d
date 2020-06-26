@@ -84,3 +84,9 @@
 ;; set up deft
 (setq deft-directory "~/org")
 (setq deft-recursive t)
+
+;; overwrite text on yank
+(delete-selection-mode)
+
+;; enable fine undo
+(setq evil-want-fine-undo t)
