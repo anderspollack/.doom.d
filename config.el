@@ -90,3 +90,6 @@
 
 ;; enable fine undo
 (setq evil-want-fine-undo t)
+
+;; web-mode script tag left padding
+(setq web-mode-script-padding 0)
