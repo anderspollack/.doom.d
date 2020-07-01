@@ -96,3 +96,7 @@
 
 ;; easier tab switching with s-[ and s-]
 (global-set-key (kbd "s-[") '+workspace/switch-left)
+(global-set-key (kbd "s-]") '+workspace/switch-right)
+
+;; windmove with shift + arrow
+(windmove-default-keybindings)
