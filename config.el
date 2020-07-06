@@ -94,6 +94,9 @@
 ;; web-mode script tag left padding
 (setq web-mode-script-padding 0)
 
+;; web-mode style tag left padding
+(setq web-mode-style-padding 0)
+
 ;; easier tab switching with s-[ and s-]
 (global-set-key (kbd "s-[") '+workspace/switch-left)
 (global-set-key (kbd "s-]") '+workspace/switch-right)
