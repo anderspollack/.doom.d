@@ -103,3 +103,7 @@
 
 ;; windmove with shift + arrow
 (windmove-default-keybindings)
+
+;; make evil open splits in the right place
+(setq evil-vsplit-window-right t)
+(setq evil-split-window-below t)
