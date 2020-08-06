@@ -75,6 +75,7 @@
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 (setq web-mode-markup-indent-offset 2)
@@ -96,6 +97,8 @@
 
 ;; web-mode style tag left padding
 (setq web-mode-style-padding 0)
+
+(setq js-indent-level 2)
 
 ;; easier tab switching with s-[ and s-]
 (global-set-key (kbd "s-[") '+workspace/switch-left)
