@@ -5,7 +5,7 @@
 
 ;; Setup initial and default frame sizes
 (setq initial-frame-alist
-      (append (list '(width . 177)
+      (append (list '(width . 172)
                     '(height . 56)
                     '(top . 0)
                     '(left . 0))))
@@ -33,7 +33,13 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "SF Mono" :size 13 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "Libre Baskerville" :size 13))
+      doom-variable-pitch-font (font-spec :family "Libre Baskerville" :size 13)
+      doom-serif-font (font-spec :family "Libre Baskerville" :size 13))
+
+(when (file-exists-p "~/.doom.d/banners")
+  (setq +doom-dashboard-banner-padding '(8 . 8)
+        +doom-dashboard-banner-file "icon-world.png"
+        +doom-dashboard-banner-dir "~/.doom.d/banners"))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
