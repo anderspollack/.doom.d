@@ -4,18 +4,18 @@
 ;; sync' after modifying this file!
 
 ;; Setup initial and default frame sizes
-(setq initial-frame-alist
-      (append (list '(width . 172)
-                    '(height . 56)
-                    '(top . 0)
-                    '(left . 0))))
+;; (setq initial-frame-alist
+;;       (append (list '(width . 172)
+;;                     '(height . 56)
+;;                     '(top . 0)
+;;                     '(left . 0))))
 
-(setq default-frame-alist
-      (append (list '(width  . 90)
-                    '(height . 52)
-                    '(top . 50)
-                    '(left . 30)
-                    '(vertical-scroll-bars . nil))))
+;; (setq default-frame-alist
+;;       (append (list '(width  . 90)
+;;                     '(height . 52)
+;;                     '(top . 50)
+;;                     '(left . 30)
+;;                     '(vertical-scroll-bars . nil))))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -32,14 +32,14 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "SF Mono" :size 13 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "Libre Baskerville" :size 13)
-      doom-serif-font (font-spec :family "Libre Baskerville" :size 13))
+;; (setq doom-font (font-spec :family "SF Mono" :size 13 :weight 'semi-light)
+;;       doom-variable-pitch-font (font-spec :family "Libre Baskerville" :size 13)
+;;       doom-serif-font (font-spec :family "Libre Baskerville" :size 13))
 
-(when (file-exists-p "~/.doom.d/banners")
-  (setq +doom-dashboard-banner-padding '(8 . 8)
-        +doom-dashboard-banner-file "icon-world.png"
-        +doom-dashboard-banner-dir "~/.doom.d/banners"))
+;; (when (file-exists-p "~/.doom.d/banners")
+;;   (setq +doom-dashboard-banner-padding '(8 . 8)
+;;         +doom-dashboard-banner-file "icon-world.png"
+;;         +doom-dashboard-banner-dir "~/.doom.d/banners"))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
