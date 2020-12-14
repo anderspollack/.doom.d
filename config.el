@@ -5,7 +5,7 @@
 
 ;; Setup initial and default frame sizes
 (setq initial-frame-alist
-      (append (list '(width . 172)
+      (append (list '(width . 176)
                     '(height . 56)
                     '(top . 0)
                     '(left . 0))))
