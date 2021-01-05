@@ -177,3 +177,9 @@
        :config
        ;;literate
        (default +bindings +smartparens))
+
+;; get normal up/down with j/k in evil mode
+(use-package-hook! evil
+  :pre-init
+  (setq evil-respect-visual-line-mode t)
+  t)
