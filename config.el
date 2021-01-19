@@ -5,16 +5,14 @@
 
 ;; Setup initial and default frame sizes
 (setq initial-frame-alist
-      (append (list '(width . 176)
-                    '(height . 56)
-                    '(top . 0)
-                    '(left . 0))))
+      (append (list '(fullscreen . maximized))))
 
 (setq default-frame-alist
       (append (list '(width  . 90)
                     '(height . 52)
                     '(top . 50)
                     '(left . 30)
+                    '(tool-bar-lines . 0)
                     '(vertical-scroll-bars . nil))))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
@@ -116,3 +114,8 @@
 ;; make evil open splits in the right place
 (setq evil-vsplit-window-right t)
 (setq evil-split-window-below t)
+
+;; get normal up/down with j/k in evil mode -- alternative method
+;; (after! evil
+;;   (map! :n "j" 'evil-next-visual-line
+;;         :n "k" 'evil-previous-visual-line))
