@@ -31,8 +31,8 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "SF Mono" :size 13 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "Libre Baskerville" :size 13)
-      doom-serif-font (font-spec :family "Libre Baskerville" :size 13))
+      doom-variable-pitch-font (font-spec :family "SF Mono" :size 13 :weight 'bold)
+      doom-serif-font (font-spec :family "SF Mono" :size 13 :weight 'bold))
 
 (when (file-exists-p "~/.doom.d/banners")
   (setq +doom-dashboard-banner-padding '(8 . 8)
