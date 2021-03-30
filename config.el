@@ -85,8 +85,8 @@
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
-
-(add-to-list 'web-mode-indentation-params '("lineup-ternary" . nil))
+;; below throws an error, so manual ternary adjustment in web-mode it is...
+;; (add-to-list 'web-mode-indentation-params '("lineup-ternary" . nil))
 ;; set up deft
 (setq deft-directory "~/org")
 (setq deft-recursive t)
