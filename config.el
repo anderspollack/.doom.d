@@ -120,3 +120,7 @@
 ;; (after! evil
 ;;   (map! :n "j" 'evil-next-visual-line
 ;;         :n "k" 'evil-previous-visual-line))
+
+;; make fringe full width
+(setq +vc-gutter-default-style nil)
+(fringe-mode nil)
