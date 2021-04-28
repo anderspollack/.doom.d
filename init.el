@@ -183,3 +183,8 @@
   :pre-init
   (setq evil-respect-visual-line-mode t)
   t)
+
+;; thicken window dividers for easier mouse resizing
+(setq
+ window-divider-default-bottom-width 2
+ window-divider-default-right-width 4)
