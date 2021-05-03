@@ -121,6 +121,10 @@
 ;;   (map! :n "j" 'evil-next-visual-line
 ;;         :n "k" 'evil-previous-visual-line))
 
-;; make fringe full width
+;; disable default fringe style
 (setq +vc-gutter-default-style nil)
-(fringe-mode nil)
+;; disable background colors of git-gutter fringe
+(after! git-gutter-fringe
+  (set-face-background 'git-gutter-fr:modified nil)
+  (set-face-background 'git-gutter-fr:added    nil)
+  (set-face-background 'git-gutter-fr:deleted  nil))
