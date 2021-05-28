@@ -186,5 +186,5 @@
 
 ;; thicken window dividers for easier mouse resizing
 (setq
- window-divider-default-bottom-width 2
- window-divider-default-right-width 4)
+ window-divider-default-bottom-width 3
+ window-divider-default-right-width 3)
