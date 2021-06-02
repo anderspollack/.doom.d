@@ -105,11 +105,7 @@
 ;; web-mode style tag left padding
 (setq web-mode-style-padding 0)
 
-(setq js-indent-level 2)
-
-;; easier tab switching with s-[ and s-]
-;; (global-set-key (kbd "s-[") '+workspace/switch-left)
-;; (global-set-key (kbd "s-]") '+workspace/switch-right)
+(global-visual-line-mode)
 
 ;; windmove with shift + arrow
 (windmove-default-keybindings)
