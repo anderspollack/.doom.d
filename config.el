@@ -105,8 +105,6 @@
 ;; web-mode style tag left padding
 (setq web-mode-style-padding 0)
 
-(global-visual-line-mode)
-
 ;; windmove with shift + arrow
 (windmove-default-keybindings)
 
