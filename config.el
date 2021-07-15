@@ -30,8 +30,9 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "SF Mono" :size 14 :weight 'semi-light)
+(setq doom-font (font-spec :family "SF Mono" :size 14)
       doom-variable-pitch-font (font-spec :family "SF Mono" :size 14 :slant 'italic)
+      doom-big-font (font-spec :family "SF Mono" :size 24)
       doom-serif-font (font-spec :family "SF Mono" :size 14 :weight 'bold))
 
 (when (file-exists-p "~/.doom.d/banners")
