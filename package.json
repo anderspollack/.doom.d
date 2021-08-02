@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/anderspollack/.doom.d#readme",
   "dependencies": {
+    "typescript-language-server": "^0.5.4",
     "vls": "^0.7.4"
   }
 }
