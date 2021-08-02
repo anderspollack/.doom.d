@@ -80,28 +80,34 @@
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . scss-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
 ;; LSP: eglot
-;; ensure vls and vscode-css-languageserver-bin is installed with
+;; ensure typescript-language-server, vls, and vscode-css-languageserver-bin is installed with
 ;; npm install
 (define-derived-mode vue-mode web-mode "Vue"
   "A major mode derived from web-mode for editing .vue files with LSP support")
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
+(add-hook 'vue-mode-hook 'eglot-ensure)
+
 ;; vscode-css-languageserver-bin
 (after! eglot
+  (add-to-list 'eglot-server-programs '(scss-mode "vscode-css-languageserver-bin"))
+  (add-to-list 'eglot-server-programs '(web-mode . ("typescript-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '(vue-mode "vls"))
-  (add-to-list 'eglot-server-programs '(css-mode "vscode-css-languageserver-bin"))
-  (add-hook 'vue-mode-hook 'eglot-ensure)
   )
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
-;; below throws an error, so manual ternary adjustment in web-mode it is...
-;; (add-to-list 'web-mode-indentation-params '("lineup-ternary" . nil))
+
+;; fix web mode ternary indentation
+(after! web-mode
+ (add-to-list 'web-mode-indentation-params '("lineup-ternary" . nil))
+ )
+
 ;; set up deft
 (setq deft-directory "~/org")
 (setq deft-recursive t)
