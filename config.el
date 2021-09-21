@@ -74,30 +74,35 @@
 ;; they are implemented.
 
 ;; web-mode customizations
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . scss-mode))
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.liquid\\'" . web-mode))
 
 ;; LSP: eglot
 ;; ensure typescript-language-server, vls, and vscode-css-languageserver-bin is installed with
 ;; npm install
-(define-derived-mode vue-mode web-mode "Vue"
-  "A major mode derived from web-mode for editing .vue files with LSP support")
-(add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
-(add-hook 'vue-mode-hook 'eglot-ensure)
 
-;; vscode-css-languageserver-bin
 (after! eglot
   (add-to-list 'eglot-server-programs '(scss-mode "vscode-css-languageserver-bin"))
-  (add-to-list 'eglot-server-programs '(web-mode . ("typescript-language-server" "--stdio")))
-  (add-to-list 'eglot-server-programs '(vue-mode "vls"))
+  (add-to-list 'eglot-server-programs '(eglot-js-mode . ("typescript-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '(eglot-vue-mode "vls"))
   )
+
+(add-to-list 'auto-mode-alist '("\\.css\\'" . scss-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+(define-derived-mode eglot-vue-mode web-mode "Vue"
+  "A major mode derived from web-mode for editing .vue files with LSP support")
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . eglot-vue-mode))
+(add-hook 'vue-mode-hook 'eglot-ensure)
+
+(define-derived-mode eglot-js-mode web-mode "JS"
+  "A major mode derived from web-mode for editing .js, .jsx, .ts, .tsx, .json files with LSP support")
+(add-to-list 'auto-mode-alist '("\\.js\\'" . eglot-js-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . eglot-js-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . eglot-js-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . eglot-js-mode))
+(add-to-list 'auto-mode-alist '("\\.json\\'" . eglot-js-mode))
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
