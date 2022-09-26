@@ -51,3 +51,5 @@
 
 (package! speed-type)
 (package! elpher)
+(package! uxntal-mode
+  :recipe (:host github :repo "rafapaezbas/uxntal-mode"))

@@ -148,3 +148,6 @@
   (set-face-background 'git-gutter-fr:modified nil)
   (set-face-background 'git-gutter-fr:added    nil)
   (set-face-background 'git-gutter-fr:deleted  nil))
+
+;; uxntal mode
+(load! "~/.emacs.d/.local/straight/repos/uxntal-mode/uxntal-mode.el")
